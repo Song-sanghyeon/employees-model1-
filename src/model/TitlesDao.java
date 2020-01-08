@@ -12,7 +12,7 @@ public class TitlesDao {
 		System.out.println("deleteTitles param empNo : "+empNo);
 		// db 연결
 		DBHelper dbHelper = new DBHelper();
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// employees 테이블의 emp_no와 titles 테이블의 emp_no가 일치한다면 해당 행 데이터 삭제
 		String sql = "DELETE FROM titles WHERE emp_no=?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
@@ -25,7 +25,7 @@ public class TitlesDao {
 		int totalRow = 0;
 		// totalRow의 값은 titles테이블의 전체 행의 수이기때문에 쿼리문만 돌려서 값을 저장하면된다.
 		DBHelper dbHelper = new DBHelper();
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		String sql = "SELECT COUNT(*) AS cnt FROM titles";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		ResultSet rs = stmt.executeQuery();
@@ -49,7 +49,7 @@ public class TitlesDao {
 		// DB연결 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// 연결 정보 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 작성할 쿼리문을 저장할 변수 만들고 저장
 		String sql = "SELECT emp_no, title, from_date, to_date FROM titles LIMIT ?,?";
 		// 쿼리문 적용
@@ -84,7 +84,7 @@ public class TitlesDao {
 		// DB 연결 정보를 위한 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// 연결 정보를 저장할 변수를 만들고 연결정보 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 작성할 쿼리문을 적용하기 위해 쿼리문을 저장할 변수를 만들고 변수에 쿼리문 저장
 		String sql = "INSERT INTO titles(emp_no, title, from_date, to_date) VALUES(?,?,?,?)";
 		// 만든 변수를 쿼리에 적용
@@ -114,7 +114,7 @@ public class TitlesDao {
 	// db에 연결 DBHelper 메소드와 연결
 	DBHelper dbhelper = new DBHelper();
 	// 연결 정보 값 저장
-	Connection conn = dbhelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees","root","java1234");
+	Connection conn = dbhelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 	// 쿼리문 작성할 변수 만들고 쿼리문 저장
 	// salaries테이블에 있는 데이터는 사원번호,직책,일시작한날짜,퇴사한날짜 이 네가지의 데이터만 봐서는 부족한 데이터를
 	// 추가시키기 위해 외래키인 emp_no를 이용해 employees테이블을 연결 해서

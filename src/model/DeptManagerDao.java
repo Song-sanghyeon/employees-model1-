@@ -14,7 +14,7 @@ public class DeptManagerDao {
 		// DB 연결 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// 연결 정보를 저장할 변수를 만들어 변수에 연결정보 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 작성할 쿼리문을 저장할 변수를 만들어 데이터 저장
 		String sql = "INSERT INTO dept_manager(dept_no, emp_no, from_date, to_date) VALUES(?,?,?,?)";
 		// 쿼리문을 쿼리에 저장
@@ -37,7 +37,7 @@ public class DeptManagerDao {
 		// mariadb에 연결 하기위해 DBHelper 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// 연결 정보 저장할 변수 만들고 연결 정보 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 쿼리문을 저장할 변수를 만들고 변수에 쿼리문 저장
 		// dept_manager테이블에 있는 데이터는 사원번호,부서번호,들어온날짜,나간날짜이다. 이 네가지의 데이터만 봐서는 부족한 데이터를
 		// 추가시키기 위해 외래키인 dept_no와 emp_no를 이용해 departments테이블과 employees테이블을 연결 해서

@@ -17,7 +17,7 @@ public class DepartmentsDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		try {
-			conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+			conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 			String sql = "UPDATE departments SET dept_name=? WHERE dept_no=?";
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, departments.getDeptName());
@@ -44,7 +44,7 @@ public class DepartmentsDao {
 		// DB에 연결하기 위해 연결정보가 있는 DBHelper 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// 연결정보를 저장할 변수를 만들고 변수에 데이터 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 쿼리문을 저장할 변수를 만들고 작성할 쿼리를 저장
 		String sql = "DELETE FROM departments WHERE dept_no=?";
 		// 변수를 매개변수로 받을 stmt생성 후 sql변수 저장
@@ -71,7 +71,7 @@ public class DepartmentsDao {
 		// db에 연결 하기 위한 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// 연결 정보를 저장할 데이터를 만들고 연결정보 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees","root","java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 작성할 쿼리문을 저장할 변수를 만들고 변수에 쿼리문을 저장
 		String sql = "SELECT dept_no, dept_name FROM departments LIMIT ?, ?";
 		// 작성한 변수를 쿼리에 저장
@@ -101,7 +101,7 @@ public class DepartmentsDao {
 		// db에 연결 하기 위한 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// 연결 정보를 저장할 데이터를 만들고 연결정보 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees","root","java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 작성할 쿼리문을 저장할 변수를 만들고 변수에 쿼리문을 저장
 		String sql = "SELECT COUNT(*) as cnt FROM departments";
 		// 작성한 변수를 쿼리에 저장
@@ -136,7 +136,7 @@ public class DepartmentsDao {
 		// DB에 연결하기 위해 연결정보가 있는 DBHelper 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// 연결정보를 저장할 변수를 만들고 변수에 데이터 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 쿼리문을 저장할 변수를 만들고 작성할 쿼리를 저장
 		String sql = "INSERT INTO departments(dept_no, dept_name) VALUES(?,?)";
 		// 변수를 매개변수로 받을 stmt생성 후 sql변수 저장
@@ -161,7 +161,7 @@ public class DepartmentsDao {
 		// db 연결을 위해 db연결 정보가 저장되어있는 DBHelper 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// conn 연결정보를 저장할 변수를 만들고 연결정보 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees","root","java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 쿼리문을 저장할 변수를 만들고 변수에 sql문 저장
 		String sql = "SELECT dept_no, dept_name FROM departments WHERE dept_no=?";
 		// 변수를 쿼리문에 저장

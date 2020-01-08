@@ -13,7 +13,7 @@ public class EmployeesDao {
 		int beginRow = (currentPage-1)*rowPerPage;
 		ArrayList<Employees> list = new ArrayList<Employees>();
 		DBHelper dbHelper = new DBHelper();
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		String sql = "SELECT emp_no, birth_date, first_name, last_name, gender, hire_date FROM employees WHERE gender=? AND first_name LIKE ? LIMIT ?,?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, "%"+word+"%");
@@ -43,7 +43,7 @@ public class EmployeesDao {
 		int beginRow = (currentPage-1)*rowPerPage;
 		ArrayList<Employees> list = new ArrayList<Employees>();
 		DBHelper dbHelper = new DBHelper();
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		String sql = "SELECT emp_no, birth_date, first_name, last_name, gender, hire_date FROM employees WHERE last_name LIKE ? LIMIT ?,?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, "%"+word+"%");
@@ -71,7 +71,7 @@ public class EmployeesDao {
 		int beginRow = (currentPage-1)*rowPerPage;
 		ArrayList<Employees> list = new ArrayList<Employees>();
 		DBHelper dbHelper = new DBHelper();
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		String sql = "SELECT emp_no, birth_date, first_name, last_name, gender, hire_date FROM employees WHERE first_name LIKE ? LIMIT ?,?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, "%"+word+"%");
@@ -99,7 +99,7 @@ public class EmployeesDao {
 		int beginRow = (currentPage-1)*rowPerPage;
 		ArrayList<Employees> list = new ArrayList<Employees>();
 		DBHelper dbHelper = new DBHelper();
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		String sql = "SELECT emp_no, birth_date, first_name, last_name, gender, hire_date FROM employees WHERE first_name OR last_name LIKE ? LIMIT ?,?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, "%"+word+"%");
@@ -123,7 +123,7 @@ public class EmployeesDao {
 		int beginRow = (currentPage-1)*rowPerPage;
 		ArrayList<Employees> list = new ArrayList<Employees>();
 		DBHelper dbHelper = new DBHelper();
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		String sql = "SELECT emp_no, birth_date, first_name, last_name, gender, hire_date FROM employees WHERE gender=? LIMIT ?,?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, gender);
@@ -155,7 +155,7 @@ public class EmployeesDao {
 		System.out.println("updateEmployees param hire_date : "+employees.getHireDate());
 		// 연결 정보 메소드 실행하고 연결정보 값 저장하고 작성할 쿼리문 만들고 쿼리문 저장해서 쿼리 연결 쿼리 실행
 		DBHelper dbHelper = new DBHelper();
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		String sql = "UPDATE employees SET birth_date=?, first_name=?, last_name=?, gender=?, hire_date=? WHERE emp_no=?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, employees.getBirthDate());
@@ -179,7 +179,7 @@ public class EmployeesDao {
 		// DB 연결 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// 연결 정보 저장할 변수 만들고 연결정보 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 작성할 쿼리문을 저장할 변수를 만들고 변수에 작성할 쿼리문 저장
 		String sql = "DELETE FROM employees WHERE emp_no=?";
 		// 쿼리 적용
@@ -204,7 +204,7 @@ public class EmployeesDao {
 		// db 연결 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// db 연결정보를 저장할 변수 만들고 연결정보 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 작성할 쿼리문을 저장할 변수를 만들고 변수에 쿼리문 저장
 		String sql = "SELECT emp_no, birth_date, first_name, last_name, gender, hire_date FROM employees LIMIT ?,?";
 		// 작성한 쿼리문을 db에 저장
@@ -236,7 +236,7 @@ public class EmployeesDao {
 		// db 연결 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// 연결 정보 값 저장할 변수 만들고 값 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 작성할 쿼리문을 저장할 변수를 만들고 저장
 		String sql = "SELECT COUNT(*) AS cnt FROM employees";
 		// 뭐리 적용
@@ -264,7 +264,7 @@ public class EmployeesDao {
 		// db연결을 위한 연결 정보가 저장되어있는 메소드 호출
 		DBHelper dbHelper = new DBHelper();
 		// 연결 정보를 저장할 변수를 만들고 데이터 저장
-		Connection conn = dbHelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees", "root", "java1234");
+		Connection conn = dbHelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 		// 쿼리문을 저장할 변수를 만들고 작성할 쿼리문 저장
 		String sql = "INSERT INTO employees(emp_no, birth_date, first_name, last_name, gender, hire_date) VALUES(?,?,?,?,?,?)";
 		// 쿼리문을 실행할 변수를 만들고 sql을 매개변수로 저장
@@ -295,7 +295,7 @@ public class EmployeesDao {
 		// 기능 첫번째 : connection 가져오는 기능
 		DBHelper dbhelper = new DBHelper();
 		// DBHelper 메소드에 getConnection의 매개변수 driver,dbid,dbpw의 값을 저장
-		Connection conn = dbhelper.getConnection("jdbc:mariadb://127.0.0.1:3306/employees","root","java1234");
+		Connection conn = dbhelper.getConnection("jdbc:mysql://localhost:3306/ssh4733", "ssh4733", "tkdgus1!");
 
 		// 기능 두번째 : select쿼리 실행 후 ResultSet 가져오는 기능
 		String sql = "SELECT emp_no, birth_date, first_name, last_name, gender, hire_date FROM employees WHERE emp_no=?";
